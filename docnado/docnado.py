@@ -413,7 +413,7 @@ def _render_markdown(file_path, **kwargs):
     """
     global NAV_MENU, PROJECT_LOGO, PDF_GENERATION_ENABLED
     DEFAULT_TEMPLATE = 'document'
-    with open(file_path, 'r') as f:
+    with open(file_path, 'r', encoding='utf-8') as f:
         md = markdown.Markdown(extensions=mdextensions)
         md.page_root = os.path.dirname(file_path)
         markup = Markup(md.convert(f.read()))
